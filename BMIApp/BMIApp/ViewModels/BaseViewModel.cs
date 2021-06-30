@@ -1,5 +1,4 @@
 ﻿using BMIApp.Models;
-using BMIApp.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,10 +7,9 @@ using Xamarin.Forms;
 
 namespace BMIApp.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel 
     {
-        public IDataStore<User> DataStore => DependencyService.Get<IDataStore<User>>();
-
+        /*
         bool isBusy = false;
         public bool IsBusy
         {
@@ -49,6 +47,6 @@ namespace BMIApp.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        #endregion
+#endregion*/
     }
 }

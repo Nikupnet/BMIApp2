@@ -10,18 +10,6 @@ namespace BMIApp.ViewModels
     public class BMICalcViewModel : INotifyPropertyChanged
     {
 
-
-        /**
-        public AboutViewModel()
-        {
-            Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
-        }
-
-        public ICommand OpenWebCommand { get; }
-    
-        */
-
     private double height = 180;
         private double weight = 72;
         private const double STEP = 1.0;

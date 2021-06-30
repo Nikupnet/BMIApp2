@@ -1,5 +1,4 @@
-﻿using BMIApp.Services;
-using BMIApp.Views;
+﻿using BMIApp.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,8 +12,8 @@ namespace BMIApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+          MainPage = new AppShell();
+
         }
 
         protected override void OnStart()

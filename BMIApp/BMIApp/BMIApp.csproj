@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\User.cs" />
+    <Compile Remove="Page1.cs" />
+    <Compile Remove="Services\IDataStore.cs" />
+    <Compile Remove="Services\MockDataStore.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
@@ -14,14 +22,24 @@
     <Compile Update="Views\BMICalc.xaml.cs">
       <DependentUpon>BMICalc.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\UserHistoryPage.xaml.cs">
-      <DependentUpon>UserHistoryPage.xaml</DependentUpon>
+    <Compile Update="Views\UserItemPage.xaml.cs">
+      <DependentUpon>UserItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\UsersPage.xaml.cs">
-      <DependentUpon>UsersPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\NewUserPage.xaml.cs">
-      <DependentUpon>NewUserPage.xaml</DependentUpon>
-    </Compile>
+	  <Compile Update="Views\UserListPage.xaml.cs">
+		  <DependentUpon>UserListPage.xaml</DependentUpon>
+	  </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\UserItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\UserListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

@@ -21,6 +21,8 @@ namespace BMIApp.Services
                 new User { Id = Guid.NewGuid().ToString(), UserName = "Fifth item", Description="This is an item description." },
                 new User { Id = Guid.NewGuid().ToString(), UserName = "Sixth item", Description="This is an item description." }
             };
+
+
         }
 
         public async Task<bool> AddItemAsync(User item)
